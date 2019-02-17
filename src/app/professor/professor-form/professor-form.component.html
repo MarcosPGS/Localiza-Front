@@ -1,3 +1,81 @@
-<p>
-  professor-form works!
-</p>
+<div class="container">
+  <!--  FORMULARIO   -->
+  <p-panel header="CADASTRAR PROFESSOR" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+
+    <!-- Professor -->
+    <div class="formulario">
+        <label >Nome Professor</label>
+      <div class="p-grid">
+        <div class="p-col-12 p-sm-12, p-sm-12">
+          <input type="text" pInputText size="160%"> 
+        </div>
+      </div>
+    
+      <div class="formulario__item">
+      <div class="p-grid">
+        <div class="p-col-12 p-md-6 p-lg-2">
+          <input type="text" pInputText placeholder="Matricula">
+        </div>
+        <div class="p-col-12 p-md-6 p-lg-2">
+          <input type="text" pInputText placeholder="Login">
+        </div>
+        <div class="p-col-12 p-md-6 p-lg-2">
+          <input type="text" pInputText placeholder="Senha">
+        </div>
+        <div class="p-col-12 p-md-6 p-lg-2">
+          <input type="text" pInputText placeholder="Permissão">
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Disciplina -->
+    <div class="formulario">
+        <label >Nome Disciplina</label>
+      <div class="p-grid">
+        <div class="p-col-12 p-sm-12, p-sm-12">
+          <input type="text" pInputText size="160%">
+        </div>
+      </div>
+      <div class="formulario__item">
+      <div class="p-grid">
+        <div class="p-col-12 p-md-6 p-lg-2">
+          <input type="text" pInputText placeholder="Dia da Semana">
+        </div>
+        <div class="p-col-12 p-md-6 p-lg-2">
+          <input type="text" pInputText placeholder="Bloco">
+        </div>
+        <div class="p-col-12 p-md-6 p-lg-2">
+          <input type="text" pInputText placeholder="Sala">
+        </div>
+      </div>
+
+      </div>
+    </div>
+
+    <!-- Curso -->
+    <div class="formulario">
+        <label >Nome Curso</label>
+      <div class="p-grid">
+        <div class="p-col-12 p-sm-12, p-sm-12">
+          <input type="text" pInputText size="160%">
+        </div>
+      </div>
+      <div class="formulario__item">
+      <div class="p-grid">
+        <div class="p-col-12 p-md-6 p-lg-2">
+          <input type="text" pInputText placeholder="Semestre">
+        </div>
+        <div class="p-col-12 p-md-6 p-lg-2">
+          <input type="text" pInputText placeholder="Turno">
+        </div>
+
+      </div>
+      </div>
+    </div>
+    <p-footer>
+        <button pButton type="button" icon="pi pi-plus" label="Salvar" class="ui-button-info" style="margin-right: .25em"></button>
+    </p-footer>
+
+  </p-panel>
+</div>

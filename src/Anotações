@@ -5,3 +5,12 @@ npm install sweetalert2@^7.28.4 --save
 PrimeNG:
 npm install primeng --save
 npm install primeicons --save
+
+Browser Animations:
+npm install @angular/animations --save
+
+CDK:
+npm install @angular/cdk --save
+
+PrimeFlex:
+npm install primeflex --save

@@ -1,4 +1,7 @@
+import { Curso } from './../../../dominio/Curso';
+import { CursoService } from './../../curso/curso.service';
 import { Component, OnInit } from '@angular/core';
+import { SelectItem } from 'primeng/components/common/selectitem';
 
 @Component({
   selector: 'app-professor-pesquisa',
@@ -6,10 +9,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./professor-pesquisa.component.css']
 })
 export class ProfessorPesquisaComponent implements OnInit {
+  cursos: SelectItem[];
+  cursoSelecionados: Curso[];
 
-  constructor() { }
+
+  constructor(private cs: CursoService) { }
 
   ngOnInit() {
+    this.listarCursos();
+  }
+
+
+  listarCursos() {
+    this.cs.listar().subscribe(
+      dadosDoServidor => {
+        this.cursoSelecionados = dadosDoServidor;
+      }, error => {
+
+      });
   }
 
 }
+

@@ -1,6 +1,70 @@
-<p-panel header="Godfather I" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
-  The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding.
-  His beloved son Michael has just come home from the war, but does not intend to become part of his father's business.
-  Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family,
-  kind and benevolent to those who give respect, but given to ruthless violence whenever anything stands against the good of the family.
-</p-panel>
+<div class="container">
+  <!-- 
+  PAINEL PESQUISA
+ -->
+  <p-panel header="PESQUISAR PROFESSOR" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+    <div class="pesquisa-seletores">
+      <div class="p-grid">
+        <div class="p-col-12 p-sm-2, p-sm-2">
+          <h3 class="first">Disciplina</h3>
+          <p-multiSelect></p-multiSelect>
+        </div>
+      
+
+      <div class="p-col-12 p-sm-2, p-sm-2">
+        <h3 class="first">Curso</h3>
+        <p-multiSelect  ></p-multiSelect>
+      </div>
+    </div>
+  </div>
+
+<div class="pesquisa-input">
+    <div class="p-grid">
+      <div class="p-col-12 p-sm-2, p-sm-3">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="pi pi-key"></i></span>
+          <input type="text" pInputText placeholder="Matricula">
+        </div>
+      </div>
+
+      <div class="p-col-12 p-sm-2, p-sm-3">
+        <div class="ui-inputgroup">
+          <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+          <input type="text" pInputText placeholder="Nome">
+        </div>
+      </div>    
+  </div>
+  </div>
+<div class="botao">
+    <p-button icon="pi pi-search"></p-button>
+</div>
+  
+  </p-panel>
+</div>
+<!-- 
+  PAINEL RESULTADO
+ -->
+
+<div class="container">
+  <p-panel class="resultado" header="RESULTADO" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+
+      <!-- <h3 class="first">Basic</h3>
+      <p-table [value]="cursos">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th>id</th>
+                  <th>nome</th>
+                  
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-curso>
+              <tr>
+                  <td>{{curso.idCurso}}</td>
+                  <td>{{curso.nome}}</td>
+                  
+              </tr>
+          </ng-template>
+      </p-table> -->
+
+  </p-panel>
+</div>
