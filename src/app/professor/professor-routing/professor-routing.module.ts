@@ -6,14 +6,12 @@ import { ProfessorFormComponent } from '../professor-form/professor-form.compone
 
 const routes: Routes = [
   {
-  path: '/professor/pesquisar',
-  pathMatch: 'full',
+  path: 'localiza/pesquisar',
   component: ProfessorPesquisaComponent,
   },
 
   {
-    path: '/professor/formulario',
-    pathMatch: 'full',
+    path: 'formulario',
     component: ProfessorFormComponent,
     }
 ]; 

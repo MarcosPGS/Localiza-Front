@@ -16,3 +16,14 @@
     position: relative;
     right: -95%;
 }
+  /*--------------------*\
+    PAINEL-RESULTADO
+  \*--------------------*/
+  :host /deep/ .ng-tns-c2-3.ui-panel-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-all.ng-star-inserted {
+    text-align: center;
+    font-size: 160%;
+    font-family: cursive;
+    background-color: orange;
+    color: white;
+  }
+   

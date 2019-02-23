@@ -4,6 +4,9 @@
 .formulario{
     margin-top: 30px;
 }
+.formulario__nome{
+    padding-right: 51%;
+}
 .formulario__item{
     margin-top: 10px;
 }
@@ -13,4 +16,21 @@ label{
     display: block;
   
     font-weight: bold;
+}
+
+.footer{
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #CFCFCF;
+    margin-top: 20px;
+    text-align: center;
+}
+
+:host /deep/.ng-tns-c2-0.ui-panel-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-all.ng-star-inserted {
+    background-color: blue;
+    text-align: center;
+    color: white;
+    font-family: cursive;
+    font-size: x-large;
 }

@@ -1,7 +1,11 @@
+import { Professor } from './../../../dominio/Professor';
+import { ProfessorService } from './../professor.service';
+import { FiltroProfessor } from './../../../dominio/FiltroProfessor';
 import { Curso } from './../../../dominio/Curso';
 import { CursoService } from './../../curso/curso.service';
 import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/components/common/selectitem';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-professor-pesquisa',
@@ -9,25 +13,61 @@ import { SelectItem } from 'primeng/components/common/selectitem';
   styleUrls: ['./professor-pesquisa.component.css']
 })
 export class ProfessorPesquisaComponent implements OnInit {
-  cursos: SelectItem[];
-  cursoSelecionados: Curso[];
+  
+  listaCursos:Curso[] = [];
+filtro: FiltroProfessor = new FiltroProfessor();
 
+listaProfessores: Professor[]=[];
 
-  constructor(private cs: CursoService) { }
+  constructor(private sc: CursoService, private ps: ProfessorService, private router: Router) { }
 
   ngOnInit() {
-    this.listarCursos();
+
+    this.sc.listar().subscribe(dadosDoServidor=>{
+      this.listaCursos = dadosDoServidor;
+
+      console.log(this.listaCursos);
+      
+    },error=>{
+
+    })
+   
+  }
+
+pesquisar(){
+  this.ps.pesquisar(this.filtro).subscribe(dadosDoServidor=>{
+    this.listaProfessores =dadosDoServidor;
+    console.log(this.listaProfessores);  
+
+  }, error=>{
+
+  });
+
+  }
+
+  visualizar(professor: Professor){
+    this.router.navigate(["/localiza/formulario"],
+    {queryParams:
+        
+      {
+        prof: JSON.stringify(professor)},
+        skipLocationChange: true});
+    
+
+  }
+
+  editar(professor: Professor){
+    console.log(professor);
   }
 
 
-  listarCursos() {
-    this.cs.listar().subscribe(
-      dadosDoServidor => {
-        this.cursoSelecionados = dadosDoServidor;
-      }, error => {
 
-      });
-  }
+
+
 
 }
+
+  
+
+
 

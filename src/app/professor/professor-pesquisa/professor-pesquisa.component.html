@@ -9,37 +9,40 @@
           <h3 class="first">Disciplina</h3>
           <p-multiSelect></p-multiSelect>
         </div>
-      
 
-      <div class="p-col-12 p-sm-2, p-sm-2">
-        <h3 class="first">Curso</h3>
-        <p-multiSelect  ></p-multiSelect>
+
+        <div class="p-col-12 p-sm-2, p-sm-2">
+          <h3 class="first">Cursos</h3>
+          <p-dropdown [options]="listaCursos"  [(ngModel)]="filtro.curso" placeholder="Selecionar" optionLabel="nome"
+            [showClear]="true"></p-dropdown>
+        </div>
       </div>
     </div>
-  </div>
 
-<div class="pesquisa-input">
-    <div class="p-grid">
-      <div class="p-col-12 p-sm-2, p-sm-3">
-        <div class="ui-inputgroup">
-          <span class="ui-inputgroup-addon"><i class="pi pi-key"></i></span>
-          <input type="text" pInputText placeholder="Matricula">
+    <div class="pesquisa-input">
+      <div class="p-grid">
+        <div class="p-col-12 p-sm-2, p-sm-3">
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="pi pi-key"></i></span>
+            <input type="text" pInputText placeholder="Matricula" [(ngModel)]="filtro.professor.matricula">
+          </div>
+        </div>
+
+        <div class="p-col-12 p-sm-2, p-sm-3">
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input type="text" pInputText placeholder="Nome" [(ngModel)]="filtro.professor.nome">
+          </div>
         </div>
       </div>
+    </div>
+    <div class="botao">
+      <p-button icon="pi pi-search" (click)="pesquisar()"></p-button>
+    </div>
 
-      <div class="p-col-12 p-sm-2, p-sm-3">
-        <div class="ui-inputgroup">
-          <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
-          <input type="text" pInputText placeholder="Nome">
-        </div>
-      </div>    
-  </div>
-  </div>
-<div class="botao">
-    <p-button icon="pi pi-search"></p-button>
-</div>
-  
   </p-panel>
+
+
 </div>
 <!-- 
   PAINEL RESULTADO
@@ -48,23 +51,27 @@
 <div class="container">
   <p-panel class="resultado" header="RESULTADO" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
 
-      <!-- <h3 class="first">Basic</h3>
-      <p-table [value]="cursos">
-          <ng-template pTemplate="header">
-              <tr>
-                  <th>id</th>
-                  <th>nome</th>
-                  
-              </tr>
-          </ng-template>
-          <ng-template pTemplate="body" let-curso>
-              <tr>
-                  <td>{{curso.idCurso}}</td>
-                  <td>{{curso.nome}}</td>
-                  
-              </tr>
-          </ng-template>
-      </p-table> -->
+    <p-table [value]="listaProfessores">
+      <ng-template pTemplate="header">
+          <tr>
+              <th>Matricula</th>
+              <th>Nome</th>
+              <th>Apção</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-professor>
+          <tr>
+              <td>{{professor.matricula}}</td>
+              <td>{{professor.nome}}</td>
+              <td>
+                <p-button icon="pi pi-plus-circle" (click)="visualizar(professor)"></p-button>
+                <p-button icon="pi pi-pencil" (click)="editar(professor)"></p-button>
+
+              </td>
+             
+          </tr>
+      </ng-template>
+  </p-table>
 
   </p-panel>
 </div>

@@ -1,0 +1,42 @@
+div#ddd {
+    color: red;
+}
+div#numero {
+    color: red;
+}
+
+div#btnAddNumero {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+:host /deep/ .ng-tns-c2-0.ui-panel-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-all.ng-star-inserted {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+
+div#buscar {
+    font-family: Arial;
+    color: brown;
+    font-family: arial black;
+    margin-bottom: 10px;
+}
+
+
+
+th#header {
+    background-color: orange;
+}
+
+.btADD {
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+/* Curso */
+
+.appCurso{
+    margin-top: 30px;
+}

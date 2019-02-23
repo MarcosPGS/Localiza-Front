@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Curso } from 'src/dominio/Curso';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,6 @@ import { Curso } from 'src/dominio/Curso';
 export class ProfessorService {
   HOST: string;
   PORTA_SERVICO: string;
-  ENDPOINT: string;
   NS_PROFESSOR:string = '/professor';
   NS_PESQUISAR: string ='/pesquisar';
   URL: string;
@@ -20,36 +19,38 @@ export class ProfessorService {
   constructor(private http: HttpClient) {
     this.HOST = environment.apiUrl;
     this.PORTA_SERVICO = environment.porta;
-    this.ENDPOINT = environment.endpoint;
+    
 
-    this.URL= `${this.HOST}${this.PORTA_SERVICO}${this.ENDPOINT}`;
+    this.URL= `${this.HOST}${this.PORTA_SERVICO}`;
    }
 getHeaders(){
   let headers = new HttpHeaders();
   headers = headers.append("Content-Type", "application/json");
+  return headers;
 }
 pesquisar(f : FiltroProfessor):Observable<Professor[]>{
-  return this.http.post<Professor[]>(`${this.HOST}${this.PORTA_SERVICO}${this.ENDPOINT}${this.NS_PROFESSOR}${this.NS_PESQUISAR}`
-  ,f);
+  return this.http.post<Professor[]>(`${this.HOST}${this.PORTA_SERVICO}${this.NS_PROFESSOR}${this.NS_PESQUISAR}`
+  ,f,{headers:  this.getHeaders() });
 
 }
 
-// listar(): Observable<Professor[]>{
-// return this.http.get<Convidado[]>(`${this.URL}${this.NS_CONVIDADO}`);
-// }
+listar(): Observable<Professor[]>{
+return this.http.get<Professor[]>(`${this.URL}${this.NS_PROFESSOR}`);
+}
 // buscarPorNome(nome: string): Observable<string>{
 //  return this.http.get<string>(`${this.URL}${this.NS_CONVIDADO}/${nome}`);
 // }
 
-// salvar(c: Convidado): Observable<Convidado>{
-//  return this.http.post<Convidado>(`${this.HOST}${this.PORTA_SERVICO}${this.ENDPOINT}${this.NS_CONVIDADO}`,c);
-// }
+salvar(p: Professor): Observable<Professor>{
+ return this.http.post<Professor>(`${this.HOST}${this.PORTA_SERVICO}${this.NS_PROFESSOR}`,p);
+}
 
-// atualizar(c: Convidado): Observable<Convidado>{
-//   return this.http.put<Convidado>(`${this.HOST}${this.PORTA_SERVICO}${this.ENDPOINT}${this.NS_CONVIDADO}`,c);
-//  }
-//  deletar(id: number): Observable<string>{
-// return this.http.delete<string>(`${this.HOST}${this.PORTA_SERVICO}${this.ENDPOINT}${this.NS_CONVIDADO}/${id}`)
-//  }
+atualizar(p: Professor): Observable<Professor>{
+  return this.http.put<Professor>(`${this.HOST}${this.PORTA_SERVICO}${this.NS_PROFESSOR}`,p);
+ }
+
+ deletar(id: number): Observable<string>{
+return this.http.delete<string>(`${this.HOST}${this.PORTA_SERVICO}${this.NS_PROFESSOR}/${id}`)
+ }
 
 }

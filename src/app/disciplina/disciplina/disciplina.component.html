@@ -1,0 +1,101 @@
+<p-panel header="Cadastro de Disciplina" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+
+        <div class="btADD">
+                <p-button icon="pi pi-plus" iconPos="right" label="Add" (click)="novo()" ></p-button>
+            </div>
+    <div class="container">
+      <p-table [columns]="cols" [value]="listaDisciplina">
+        <ng-template pTemplate="header" let-columns>
+           
+            <tr>
+                <th *ngFor="let col of columns" id="header">
+                    {{col.header}}
+                </th>
+            </tr>
+            
+            
+        </ng-template>
+        <ng-template pTemplate="body" let-linha>
+            <tr>
+                <td>
+                    {{linha.idDisciplina}}
+                </td>
+                <td>
+                    {{linha.nome}}
+                </td>
+                <td>
+                  {{linha.diaDaSemana}}
+              </td>
+                <td>
+                    {{linha.bloco}}
+                </td>
+                <td>
+                  {{linha.sala}}
+              </td>
+               <td>
+                    <button pButton type="button" icon="pi pi-pencil" id="atualiza" class="btnAtualizacao" (click)="chamarDialogo(linha)"></button>
+                    <button pButton type="button" icon="pi pi-trash" id="excluir" class="ui-button-danger" (click)="modalExcluir(linha)"></button>
+               </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    </div>
+
+</p-panel>
+
+
+
+
+
+<p-dialog class="dialogoCadastro" header="Disciplina" [(visible)]="mostarDialogo" [modal]="true" [responsive]="true" [style]="{width: '350px', minWidth: '200px'}"
+    [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+    <form [formGroup]="formulario">
+           
+        NOME DISCIPLINA:
+        <div class="form-group">
+            <div class="ui-inputgroup">
+                <span class="ui-float-label">
+                    <input type="text" pInputText formControlName="nome" [(ngModel)]="disciplina.nome" name="nome" />
+                    <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+                </span>
+            </div>
+        </div>
+        
+        DIA DA SEMANA:
+        <div class="form-group">
+            <div class="ui-inputgroup">
+                <span class="ui-float-label">
+                    <input type="text" pInputText formControlName="diaDaSemana" [(ngModel)]="disciplina.diaDaSemana" name="diaDaSemana" />
+                    <span class="ui-inputgroup-addon"><i class="pi pi-bars"></i></span>
+                </span>
+            </div>
+        </div>
+
+        BLOCO:
+        <div class="form-group">
+            <div class="ui-inputgroup">
+                <span class="ui-float-label">
+                    <input type="text" pInputText formControlName="bloco" [(ngModel)]="disciplina.bloco" name="bloco" />
+                    <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+                </span>
+            </div>
+        </div>
+
+        SALA:
+        <div class="form-group">
+            <div class="ui-inputgroup">
+                <span class="ui-float-label">
+                    <input type="text" pInputText formControlName="sala" [(ngModel)]="disciplina.sala" name="sala" />
+                    <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+                </span>
+            </div>
+        </div>
+    </form>
+
+
+    <p-footer>
+        <button type="button" pButton icon="pi pi-check" (click)="salvarOuAtualizar()" [disabled]="formulario.invalid" label="Salvar"></button>
+        <button type="button" pButton icon="pi pi-close" (click)="mostarDialogo=false" label="Cancelar" class="ui-button-danger"></button>
+    </p-footer>
+
+</p-dialog>

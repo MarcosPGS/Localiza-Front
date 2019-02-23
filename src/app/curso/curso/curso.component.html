@@ -1,0 +1,90 @@
+<p-panel header="Cadastro de Curso" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
+
+        <div class="btADD">
+                <p-button icon="pi pi-plus" iconPos="right" label="Add" (click)="novo()" ></p-button>
+            </div>
+    <div class="container">
+      <p-table [columns]="cols" >
+        <ng-template pTemplate="header" let-columns>
+           
+            <tr>
+                <th *ngFor="let col of columns" id="header">
+                    {{col.header}}
+                </th>
+            </tr>
+            
+            
+        </ng-template>
+        <ng-template pTemplate="body" let-linha>
+            <tr>
+                <td>
+                    {{linha.idCurso}}
+                </td>
+                <td>
+                    {{linha.nome}}
+                </td>
+                <td>
+                  {{linha.semestre}}
+              </td>
+                <td>
+                    {{linha.turno}}
+                </td>
+                
+               <td>
+                    <button pButton type="button" icon="pi pi-pencil" id="atualiza" class="btnAtualizacao" (click)="chamarDialogo(linha)"></button>
+                    <button pButton type="button" icon="pi pi-trash" id="excluir" class="ui-button-danger" (click)="modalExcluir(linha)"></button>
+               </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    </div>
+
+</p-panel>
+
+
+
+
+
+<p-dialog class="dialogoCadastro" header="Curso" [(visible)]="mostarDialogo" [modal]="true" [responsive]="true" [style]="{width: '350px', minWidth: '200px'}"
+    [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+    <form [formGroup]="formulario">
+           
+        NOME CURSO:
+        <div class="form-group">
+            <div class="ui-inputgroup">
+                <span class="ui-float-label">
+                    <input type="text" pInputText formControlName="nome" [(ngModel)]="curso.nome" name="nome" />
+                    <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+                </span>
+            </div>
+        </div>
+        
+        SEMESTRE:
+        <div class="form-group">
+            <div class="ui-inputgroup">
+                <span class="ui-float-label">
+                    <input type="text" pInputText formControlName="semestre" [(ngModel)]="curso.semestre" name="semestre" />
+                    <span class="ui-inputgroup-addon"><i class="pi pi-bars"></i></span>
+                </span>
+            </div>
+        </div>
+
+        TURNO:
+        <div class="form-group">
+            <div class="ui-inputgroup">
+                <span class="ui-float-label">
+                    <input type="text" pInputText formControlName="turno" [(ngModel)]="curso.turno" name="turno" />
+                    <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+                </span>
+            </div>
+        </div>
+
+    
+    </form>
+
+
+    <p-footer>
+        <button type="button" pButton icon="pi pi-check" (click)="salvarOuAtualizar()" [disabled]="formulario.invalid" label="Salvar"></button>
+        <button type="button" pButton icon="pi pi-close" (click)="mostarDialogo=false" label="Cancelar" class="ui-button-danger"></button>
+    </p-footer>
+</p-dialog>

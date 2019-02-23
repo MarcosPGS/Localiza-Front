@@ -5,8 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:',
-  porta:'8080',
-  endpoint: '/api',
+  porta:'8080'
 
 };
 
