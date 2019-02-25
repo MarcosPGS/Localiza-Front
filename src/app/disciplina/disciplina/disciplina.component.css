@@ -9,12 +9,18 @@ div#btnAddNumero {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-:host /deep/ .ng-tns-c2-0.ui-panel-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-all.ng-star-inserted {
+:host /deep/ .ng-tns-c2-5.ui-panel-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-all.ng-star-inserted {
+    background-color: cornflowerblue;
+    text-align: center;
+    color: white;
+    font-family: cursive;
+}
+
+/* modal dialogo */
+:host /deep/.ui-dialog-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-top.ng-tns-c7-6.ng-star-inserted {
     background-color: blue;
     color: white;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: x-large;
+    font-family: cursive;
 }
 
 div#buscar {

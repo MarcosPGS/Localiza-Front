@@ -3,7 +3,6 @@
   \*--------------------*/
   :host /deep/ .ng-tns-c2-0.ui-panel-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-all.ng-star-inserted {
     text-align: center;
-    font-size: 190%;
     font-family: cursive;
     background-color: blue;
     color: white;
@@ -21,9 +20,19 @@
   \*--------------------*/
   :host /deep/ .ng-tns-c2-3.ui-panel-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-all.ng-star-inserted {
     text-align: center;
-    font-size: 160%;
     font-family: cursive;
     background-color: orange;
     color: white;
   }
    
+  td {
+    text-align: center;
+
+  }
+  :host /deep/ button.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-icon-only {
+    margin-right: 10px;
+}
+
+th {
+  color: black !important;
+}

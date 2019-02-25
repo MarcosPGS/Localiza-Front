@@ -49,52 +49,10 @@
 
 <p-dialog class="dialogoCadastro" header="Disciplina" [(visible)]="mostarDialogo" [modal]="true" [responsive]="true" [style]="{width: '350px', minWidth: '200px'}"
     [minY]="70" [maximizable]="true" [baseZIndex]="10000">
-    <form [formGroup]="formulario">
-           
-        NOME DISCIPLINA:
-        <div class="form-group">
-            <div class="ui-inputgroup">
-                <span class="ui-float-label">
-                    <input type="text" pInputText formControlName="nome" [(ngModel)]="disciplina.nome" name="nome" />
-                    <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
-                </span>
-            </div>
-        </div>
-        
-        DIA DA SEMANA:
-        <div class="form-group">
-            <div class="ui-inputgroup">
-                <span class="ui-float-label">
-                    <input type="text" pInputText formControlName="diaDaSemana" [(ngModel)]="disciplina.diaDaSemana" name="diaDaSemana" />
-                    <span class="ui-inputgroup-addon"><i class="pi pi-bars"></i></span>
-                </span>
-            </div>
-        </div>
-
-        BLOCO:
-        <div class="form-group">
-            <div class="ui-inputgroup">
-                <span class="ui-float-label">
-                    <input type="text" pInputText formControlName="bloco" [(ngModel)]="disciplina.bloco" name="bloco" />
-                    <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
-                </span>
-            </div>
-        </div>
-
-        SALA:
-        <div class="form-group">
-            <div class="ui-inputgroup">
-                <span class="ui-float-label">
-                    <input type="text" pInputText formControlName="sala" [(ngModel)]="disciplina.sala" name="sala" />
-                    <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
-                </span>
-            </div>
-        </div>
-    </form>
-
-
+    
+DIalogo
     <p-footer>
-        <button type="button" pButton icon="pi pi-check" (click)="salvarOuAtualizar()" [disabled]="formulario.invalid" label="Salvar"></button>
+        <button type="button" pButton icon="pi pi-check" (click)="salvarOuAtualizar()" label="Salvar"></button>
         <button type="button" pButton icon="pi pi-close" (click)="mostarDialogo=false" label="Cancelar" class="ui-button-danger"></button>
     </p-footer>
 

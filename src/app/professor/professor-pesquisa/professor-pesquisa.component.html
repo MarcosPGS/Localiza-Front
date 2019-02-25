@@ -6,8 +6,9 @@
     <div class="pesquisa-seletores">
       <div class="p-grid">
         <div class="p-col-12 p-sm-2, p-sm-2">
-          <h3 class="first">Disciplina</h3>
-          <p-multiSelect></p-multiSelect>
+          <h3 class="first">disciplina</h3>
+          <p-dropdown [options]="listaDisciplinas"  [(ngModel)]="filtro.disciplina" placeholder="Selecionar" optionLabel="nome"
+            [showClear]="true"></p-dropdown>
         </div>
 
 

@@ -47,44 +47,11 @@
 
 <p-dialog class="dialogoCadastro" header="Curso" [(visible)]="mostarDialogo" [modal]="true" [responsive]="true" [style]="{width: '350px', minWidth: '200px'}"
     [minY]="70" [maximizable]="true" [baseZIndex]="10000">
-    <form [formGroup]="formulario">
-           
-        NOME CURSO:
-        <div class="form-group">
-            <div class="ui-inputgroup">
-                <span class="ui-float-label">
-                    <input type="text" pInputText formControlName="nome" [(ngModel)]="curso.nome" name="nome" />
-                    <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
-                </span>
-            </div>
-        </div>
-        
-        SEMESTRE:
-        <div class="form-group">
-            <div class="ui-inputgroup">
-                <span class="ui-float-label">
-                    <input type="text" pInputText formControlName="semestre" [(ngModel)]="curso.semestre" name="semestre" />
-                    <span class="ui-inputgroup-addon"><i class="pi pi-bars"></i></span>
-                </span>
-            </div>
-        </div>
 
-        TURNO:
-        <div class="form-group">
-            <div class="ui-inputgroup">
-                <span class="ui-float-label">
-                    <input type="text" pInputText formControlName="turno" [(ngModel)]="curso.turno" name="turno" />
-                    <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
-                </span>
-            </div>
-        </div>
-
-    
-    </form>
-
-
+    dialogo
+   
     <p-footer>
-        <button type="button" pButton icon="pi pi-check" (click)="salvarOuAtualizar()" [disabled]="formulario.invalid" label="Salvar"></button>
+        <button type="button" pButton icon="pi pi-check" (click)="salvarOuAtualizar()"  label="Salvar"></button>
         <button type="button" pButton icon="pi pi-close" (click)="mostarDialogo=false" label="Cancelar" class="ui-button-danger"></button>
     </p-footer>
 </p-dialog>

@@ -8,12 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CursoService {
-  lista:Curso[]=[];
-  listaAux: Curso[] = [];
-  filtrando: boolean = false;
-
-
- 
+  
   HOST: string;
   PORTA_SERVICO: string;
   NS_CURSO:string = '/curso';

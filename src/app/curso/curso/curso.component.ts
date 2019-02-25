@@ -13,19 +13,12 @@ export class CursoComponent implements OnInit {
   cols: any[] = [];
   curso:Curso= new Curso();
   mostarDialogo: boolean = false;
-  formulario: FormGroup;
-  constructor(private cs: CursoService, private fb: FormBuilder) { }
+  
+  constructor(private cs: CursoService) { }
 
   ngOnInit() {
 
-    this.formulario = this.fb.group({
-
-      nome: new FormControl('', Validators.compose([Validators.required])),
-      semestre: new FormControl('', Validators.compose([Validators.required])),
-      turno: new FormControl('', Validators.compose([Validators.required]))
-     
-    });
-
+    
 
     this.cols = [
       { field: 'idCurso', header: 'ID' },
