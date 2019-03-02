@@ -1,3 +1,4 @@
+import { Bloco } from './Bloco';
 import { Disciplina } from './Disciplina';
 import { Usuario } from './Usuario';
 import { Professor } from './Professor';
@@ -11,6 +12,8 @@ export class FiltroProfessor{
     professor: Professor = new Professor();
 
     curso: Curso = new Curso();
+
+    bloco: Bloco = new Bloco();
     constructor(){
 
     }

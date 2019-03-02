@@ -52,11 +52,13 @@
 <div class="container">
   <p-panel class="resultado" header="RESULTADO" [toggleable]="true" [style]="{'margin-bottom':'20px'}">
 
-    <p-table [value]="listaProfessores">
+    <p-table [value]="listaProfessorPesquisa">
       <ng-template pTemplate="header">
           <tr>
               <th>Matricula</th>
               <th>Nome</th>
+              <th>Disciplina</th>
+              <th>Curso</th>
               <th>Apção</th>
           </tr>
       </ng-template>
@@ -64,6 +66,8 @@
           <tr>
               <td>{{professor.matricula}}</td>
               <td>{{professor.nome}}</td>
+              <td>{{professor.disciplinas}}</td>
+              <td>{{professor.cursos}}</td>
               <td>
                 <p-button icon="pi pi-plus-circle" (click)="visualizar(professor)"></p-button>
                 <p-button icon="pi pi-pencil" (click)="editar(professor)"></p-button>
