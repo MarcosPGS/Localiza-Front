@@ -11,6 +11,7 @@ import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
 import {DialogModule} from 'primeng/dialog';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [CursoComponent],
@@ -24,7 +25,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DropdownModule
    
     
   ],

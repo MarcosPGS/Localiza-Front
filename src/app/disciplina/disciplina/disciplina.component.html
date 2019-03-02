@@ -49,8 +49,31 @@
 
 <p-dialog class="dialogoCadastro" header="Disciplina" [(visible)]="mostarDialogo" [modal]="true" [responsive]="true" [style]="{width: '350px', minWidth: '200px'}"
     [minY]="70" [maximizable]="true" [baseZIndex]="10000">
+    <div class="disciplina">
+        <h3 class="first">Disciplina:</h3>
+          <p-dropdown [options]="listaDisciplinas"  placeholder="Selecionar" optionLabel="nome"
+            [showClear]="true"></p-dropdown>
+    </div>
+
+    <div class="diaSemana">
+        <h3 class="first">Dia da Semana:</h3>
+          <p-dropdown [options]="listaDiaSemana"  placeholder="Selecionar" optionLabel="descricao"
+            [showClear]="true"></p-dropdown>
+    </div>
+
+    <div class="bloco">
+        <h3 class="first">Bloco:</h3>
+          <p-dropdown [options]="listaBloco"  placeholder="Selecionar" optionLabel="descricao"
+            [showClear]="true"></p-dropdown>
+    </div>
+
+    <div class="bloco">
+        <h3 class="first">Sala:</h3>
+          <p-dropdown [options]="listaSala"  placeholder="Selecionar" optionLabel="descricao"
+            [showClear]="true"></p-dropdown>
+    </div>
+
     
-DIalogo
     <p-footer>
         <button type="button" pButton icon="pi pi-check" (click)="salvarOuAtualizar()" label="Salvar"></button>
         <button type="button" pButton icon="pi pi-close" (click)="mostarDialogo=false" label="Cancelar" class="ui-button-danger"></button>

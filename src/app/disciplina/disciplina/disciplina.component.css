@@ -9,6 +9,7 @@ div#btnAddNumero {
     margin-top: 10px;
     margin-bottom: 10px;
 }
+/* modal cadastro */
 :host /deep/ .ng-tns-c2-5.ui-panel-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-all.ng-star-inserted {
     background-color: cornflowerblue;
     text-align: center;

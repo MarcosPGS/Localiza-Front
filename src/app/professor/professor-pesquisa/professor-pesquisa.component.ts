@@ -22,7 +22,8 @@ export class ProfessorPesquisaComponent implements OnInit {
 
 listaProfessores: Professor[]=[];
 
-  constructor(private sc: CursoService, private ds: DisciplinaService,private ps: ProfessorService, private router: Router) { }
+  constructor(private sc: CursoService, private ds: DisciplinaService,private ps: ProfessorService,
+     private router: Router) { }
 
   ngOnInit() {
 
@@ -33,31 +34,23 @@ listaProfessores: Professor[]=[];
     this.ds.listar().subscribe(dadosDoServidor=>{
       this.listaDisciplinas = dadosDoServidor;      
     },error=>{
-    });
-    
+    });   
    
   }
 
 pesquisar(){
   this.ps.pesquisar(this.filtro).subscribe(dadosDoServidor=>{
     this.listaProfessores =dadosDoServidor;
-    this
-    console.log(this.listaProfessores);  
-
   }, error=>{
-
   });
-
   }
 
   visualizar(professor: Professor){
     this.router.navigate(["/localiza/formulario"],
-    {queryParams:
-        
+    {queryParams:        
       {
         prof: JSON.stringify(professor)},
         skipLocationChange: true});
-    
 
   }
 

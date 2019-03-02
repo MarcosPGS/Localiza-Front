@@ -1,16 +1,17 @@
-import { Disciplina } from './../../dominio/Disciplina';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Semestre } from 'src/dominio/Semestre';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DisciplinaService {
+export class SemestreService {
   HOST: string;
   PORTA_SERVICO: string;
-  NS_DISCIPLINA:string = '/disciplina';
+  NS_SEMESTRE:string = '/semestre';
   URL: string;
 
   constructor(private http: HttpClient) {
@@ -20,14 +21,14 @@ export class DisciplinaService {
     this.URL= `${this.HOST}${this.PORTA_SERVICO}`;
    }
 
+
    getHeaders(){
     let headers = new HttpHeaders();
     headers = headers.append("Content-Type", "application/json");
     return headers;
   }
-
  
-listar(): Observable<Disciplina[]>{
-  return this.http.get<Disciplina[]>(`${this.URL}${this.NS_DISCIPLINA}`);
+listar(): Observable<Semestre[]>{
+  return this.http.get<Semestre[]>(`${this.URL}${this.NS_SEMESTRE}`);
   }
 }

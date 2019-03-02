@@ -24,9 +24,9 @@
             <input type="text" pInputText placeholder="Senha" [(ngModel)]="professor.usuario.senha">
           </div>
           <div class="p-col-12 p-md-6 p-lg-2">
-            <input type="text" pInputText placeholder="Permissão" [(ngModel)]="professor.permissao">
-            <!-- <p-dropdown [options]="listaPermissao"  [(ngModel)]="filtro.usuario.permissao" placeholder="Selecionar" optionLabel="nome"
-            [showClear]="true"></p-dropdown> -->
+            <label>Permissão</label>
+            <p-dropdown [options]="listaPermissao"  placeholder="Selecionar" optionLabel="permissao"
+            [showClear]="true"></p-dropdown>
           </div>
         </div>
       </div>

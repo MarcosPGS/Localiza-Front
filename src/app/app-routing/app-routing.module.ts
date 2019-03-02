@@ -20,7 +20,6 @@ const routes: Routes = [
     pathMatch: 'full',
     component: ProfessorPesquisaComponent,
     },
-
     {
       path: 'localiza/formulario',
       pathMatch: 'full',
@@ -31,23 +30,17 @@ const routes: Routes = [
     loadChildren: '../professor/professor.module#ProfessorModule',
     // canActivate:[AuthGuard],
     data:{permissoes:['ROLE_CADASTRAR-PROFESSOR','ROLE_ADMINISTRADORS']}
-    },
-
-
-      // está rota sempre precisa fica no final das demasis rotas
-    {
+    },      
+    {// está rota sempre precisa fica no final das demasis rotas
       path: 'acesso-negado',
       component: AcessoNegadoComponent,
-      },
-  
+      },  
     {
       path: '**',
       pathMatch: 'full',
       component:  NaoEncontradoComponent,
       }
 ]; 
-
-
 @NgModule({
   declarations: [],
   imports: [

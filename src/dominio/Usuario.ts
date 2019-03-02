@@ -2,7 +2,7 @@ import { Permissao } from './Permissao';
 
 export class Usuario{
 
-    idUsuario: number;
+    idProfessor: number;
     login: string;
     senha: string;
     nome: string;

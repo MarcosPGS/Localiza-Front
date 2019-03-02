@@ -48,7 +48,24 @@
 <p-dialog class="dialogoCadastro" header="Curso" [(visible)]="mostarDialogo" [modal]="true" [responsive]="true" [style]="{width: '350px', minWidth: '200px'}"
     [minY]="70" [maximizable]="true" [baseZIndex]="10000">
 
-    dialogo
+    <div class="Curso">
+        <h3 class="first">Curso:</h3>
+          <p-dropdown [options]="listaCurso"  placeholder="Selecionar" optionLabel="nome"
+            [showClear]="true"></p-dropdown>
+
+    </div>
+    <div class="semestre">
+        <h3 class="first">Semestre:</h3>
+          <p-dropdown [options]="listaSemestre"  placeholder="Selecionar" optionLabel="semestre"
+            [showClear]="true"></p-dropdown>
+
+    </div>
+    <div class="turno">
+        <h3 class="first">Turno:</h3>
+          <p-dropdown [options]="listaTurno"  placeholder="Selecionar" optionLabel="descricao"
+            [showClear]="true"></p-dropdown>
+
+    </div>
    
     <p-footer>
         <button type="button" pButton icon="pi pi-check" (click)="salvarOuAtualizar()"  label="Salvar"></button>

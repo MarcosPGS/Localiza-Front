@@ -9,19 +9,21 @@ div#btnAddNumero {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-:host /deep/ .ng-tns-c2-7.ui-panel-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-all.ng-star-inserted {
+
+/* modal cadastro */
+:host /deep/ .ng-tns-c2-11.ui-panel-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-all.ng-star-inserted {
     background-color: cornflowerblue;
     text-align: center;
     color: white;
     font-family: cursive;
 }
 
-
 /* modal dialogo */
-:host /deep/.ui-dialog-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-top.ng-tns-c7-8.ng-star-inserted {
+:host /deep/.ui-dialog-titlebar.ui-widget-header.ui-helper-clearfix.ui-corner-top.ng-tns-c7-12.ng-star-inserted {
     background-color: blue;
     color: white;
     font-family: cursive;
+
 }
 
 

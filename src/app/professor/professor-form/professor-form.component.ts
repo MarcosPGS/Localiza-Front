@@ -1,3 +1,4 @@
+import { PermissaoService } from './../../permissao/permissao.service';
 import { ProfessorService } from './../professor.service';
 import { Permissao } from './../../../dominio/Permissao';
 import { Professor } from './../../../dominio/Professor';
@@ -16,13 +17,20 @@ professor: Professor = new Professor();
 listaPermissao: Permissao[] = []; 
 filtro: FiltroProfessor = new FiltroProfessor();
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute,private ps: ProfessorService) { }
+  constructor(private router: Router, private activatedRoute: ActivatedRoute,private ps: ProfessorService, private pers: PermissaoService) { }
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(dadosDaPesquisa=>{
       console.log(JSON.parse(dadosDaPesquisa.prof));
 
       this.professor = JSON.parse(dadosDaPesquisa.prof);  
+    });
+
+    //lista permissao
+    this.pers.listar().subscribe(dadosDoServidor=>{
+      this.listaPermissao =dadosDoServidor;
+    },error=>{
+
     });
   }
 

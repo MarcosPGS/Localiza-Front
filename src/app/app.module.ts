@@ -1,3 +1,13 @@
+import { PermissaoService } from './permissao/permissao.service';
+import { PermissaoModule } from './permissao/permissao.module';
+import { SalaModule } from './sala/sala.module';
+import { BlocoService } from './bloco/bloco.service';
+import { BlocoModule } from './bloco/bloco.module';
+import { TurnoService } from './turno/turno.service';
+import { TurnoModule } from './turno/turno.module';
+import { SemestreService } from './semestre/semestre.service';
+import { DiaSemanaService } from './dia-semana/dia-semana.service';
+import { DiaSemanaModule } from './dia-semana/dia-semana.module';
 import { DisciplinaService } from './disciplina/disciplina.service';
 import { ProfessorService } from './professor/professor.service';
 import { CursoService } from './curso/curso.service';
@@ -18,6 +28,8 @@ import { AcessoNegadoComponent } from './acesso-negado/acesso-negado.component';
 
 
 import {DropdownModule} from 'primeng/dropdown';
+import { SemestreModule } from './semestre/semestre.module';
+import { SalaService } from './sala/sala.service';
 
 
 @NgModule({
@@ -35,13 +47,15 @@ import {DropdownModule} from 'primeng/dropdown';
     ProfessorModule,
     DisciplinaModule,
     CursoModule,
-
- 
-    
-
-    
+    DiaSemanaModule,
+    SemestreModule,
+    TurnoModule,
+    BlocoModule,
+    SalaModule,
+    PermissaoModule
   ],
-  providers: [CursoService,ProfessorService,DisciplinaService],
+  providers: [CursoService,ProfessorService,DisciplinaService,
+     DiaSemanaService,SemestreService,TurnoService, BlocoService, SalaService, PermissaoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
